@@ -7,3 +7,4 @@ Author: Bernd Taschler, Sach Mukherjee
 Maintainer: Bernd Taschler <bernd.taschler@gmail.com>
 License: GPL-3.0
 Imports: mclust, huge, doParallel, pcaMethods, nethet
+RoxygenNote: 6.0.1

@@ -6,7 +6,6 @@
 #' @param npc The number of principal components to be returned. 
 #' @return Principal components (n x npc).
 #' @export
-#' @examples
 
 GramPCA <- function(xx, npc) {
   ## preliminaries

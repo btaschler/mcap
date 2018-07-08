@@ -5,7 +5,7 @@ Model-based clustering in very high dimensions via adaptive projection.
 
 ## Getting Started
 
-Clone or download the `mcap` package from github: <https://github.com/btaschler/MCAP>.
+Clone or download the code for the [`mcap` package](https://github.com/btaschler/MCAP) from github.
 
 
 ### Prerequisites
@@ -60,14 +60,14 @@ We use [Semantic Versioning](http://semver.org/) for versioning. For the version
 
 ## Authors
 
-* **Bernd Taschler, Sach Mukherjee** - *Initial work* - [BT](https://github.com/btaschler)
+* **Bernd Taschler, Sach Mukherjee** -- *Initial work* -- [BT](https://github.com/btaschler)
 
 See also the list of [contributors](https://github.com/btaschler/MCAP/graphs/contributors) who participated in this project.
 
 
 ## License
 
-This project is licensed under the GNU General Public License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the GNU General Public License -- see the [LICENSE.md](LICENSE.md) file for details.
 
 
 ## Acknowledgments
