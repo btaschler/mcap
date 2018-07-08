@@ -1,0 +1,9 @@
+Package: mcap
+Title: Model-based clustering in high dimensions via adaptive projections
+Description: Using Gaussian mixture models and linear projections (PCA, random 
+             projections) for clustering in very high dimensional settings
+Version: 0.1.0
+Author: Bernd Taschler, Sach Mukherjee 
+Maintainer: Bernd Taschler <bernd.taschler@gmail.com>
+License: GPL-3.0
+Imports: mclust, huge, doParallel, pcaMethods, nethet
