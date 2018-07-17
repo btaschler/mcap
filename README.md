@@ -1,6 +1,9 @@
 # MCAP
 
-Model-based clustering in very high dimensions via adaptive projection.
+Model-based clustering in very high dimensions via adaptive (linear) projections.
+
+## Resources
+See our paper: ...
 
 
 ## Getting Started
