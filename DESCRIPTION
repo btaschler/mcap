@@ -3,8 +3,11 @@ Title: Model-based clustering in high dimensions via adaptive projections
 Description: Using Gaussian mixture models and linear projections (PCA, random 
              projections) for clustering in very high dimensional settings
 Version: 0.1.0
-Author: Bernd Taschler, Sach Mukherjee 
+Authors@R: c(person('Bernd', 'Taschler', role = c('aut', 'cre'), email = 'bernd.taschler@dzne.de'), 
+             person('Sach', 'Mukherjee', role = c('aut'), email = 'sach.mukherjee@dzne.de'))
 Maintainer: Bernd Taschler <bernd.taschler@gmail.com>
-License: GPL-3.0
+License: GPL-3.0 + file LICENSE
 Imports: mclust, huge, doParallel, pcaMethods, nethet
 RoxygenNote: 6.0.1
+Suggests: testthat
+Encoding: UTF-8

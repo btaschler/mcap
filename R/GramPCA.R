@@ -1,13 +1,18 @@
-#' Converts Fahrenheit to Kelvin
-#'
-#' This function performs PCA using the eigenvectors of the Gram matrix G 
-#' (G=X*X') when n < p, or standard PCA when n > p.
-#' @param xx The data matrix (n x p).
-#' @param npc The number of principal components to be returned. 
-#' @return Principal components (n x npc).
-#' @export
+
 
 GramPCA <- function(xx, npc) {
+  #' Perform PCA using Gram matrix
+  #'
+  #' This function performs PCA using the eigenvectors of the Gram matrix G 
+  #' (G=X*X') when n < p, or standard PCA when n > p.
+  #' 
+  #' @param xx The data matrix (n x p).
+  #' @param npc The number of principal components to be returned. 
+  #' 
+  #' @return zz Principal components (n x npc).
+  #' @export
+  
+  
   ## preliminaries
   n <- nrow(xx)
   p <- ncol(xx)

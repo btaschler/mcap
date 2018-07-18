@@ -2,7 +2,7 @@
 % Please edit documentation in R/GramPCA.R
 \name{GramPCA}
 \alias{GramPCA}
-\title{Converts Fahrenheit to Kelvin}
+\title{Perform PCA using Gram matrix}
 \usage{
 GramPCA(xx, npc)
 }
