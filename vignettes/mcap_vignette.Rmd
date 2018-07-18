@@ -1,0 +1,31 @@
+---
+title: "Vignette for MCAP"
+author: "Bernd Taschler"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_vignette:
+    toc: true
+    keep_md: true
+vignette: >
+  %\VignetteIndexEntry{Vignette for MCAP}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+
+Using the Gram matrix to compute PCA components: Input matrix $X \sim \text{MVN}(0,1)$, 
+output matrix $Z$ consists of the first $npc = 2$ principal components.
+```{r}
+library(mcap)
+X <- matrix(rnorm(2000),20,100)
+Z <- GramPCA(X, npc = 2)
+print(Z)
+```
