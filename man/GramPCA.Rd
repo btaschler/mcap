@@ -12,7 +12,7 @@ GramPCA(xx, npc)
 \item{npc}{The number of principal components to be returned.}
 }
 \value{
-Principal components (n x npc).
+zz Principal components (n x npc).
 }
 \description{
 This function performs PCA using the eigenvectors of the Gram matrix G 
