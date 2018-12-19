@@ -1,5 +1,4 @@
 
-
 GramPCA <- function(xx, npc) {
   #' Perform PCA using Gram matrix
   #'
@@ -9,7 +8,7 @@ GramPCA <- function(xx, npc) {
   #' @param xx The data matrix (n x p).
   #' @param npc The number of principal components to be returned. 
   #' 
-  #' @return zz Principal components (n x npc).
+  #' @return @param zz Principal components (n x npc).
   #' @export
   
   
@@ -20,15 +19,12 @@ GramPCA <- function(xx, npc) {
   ## mean centre columns
   xx <- scale(xx, center=TRUE, scale=FALSE)
 
-  ## compute Gram matrix
-  gg <- xx %*% t(xx)
-  
   ## perform Gram-PCA or standard PCA
   if(n < p){
-    specDecomp <- eigen(gg,npc)
+    gg <- xx %*% t(xx)             #compute Gram matrix
+    specDecomp <- eigen(gg,npc)    #note: eigenvalues are already sorted
     lam <- specDecomp$values
     V <- specDecomp$vectors
-    #lamSorted <- sort.int(lam, decreasing = T, index.return = T) #eigenvals are already sorted
     zz <- V[,1:npc]
     
   }else{ #case n > p

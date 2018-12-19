@@ -4,3 +4,4 @@
 .Rhistory
 .Rbuildignore
 inst/doc
+.Rproj.user
