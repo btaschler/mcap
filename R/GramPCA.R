@@ -32,5 +32,5 @@ GramPCA <- function(xx, npc) {
     zz <- pcaS4@scores 
   }
   
-  return(zz)
+  return(list('zz' = zz))
 }

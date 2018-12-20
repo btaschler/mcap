@@ -31,12 +31,13 @@ ClusterStability <- function(xx, k, B = 10, frac_subsample = 0.75){
     xx_sub <- xx[idx,]
     
     ## perform clustering (full covariance Gaussian mixtures)
-    clust_model <- MyGMM3(xx_sub, k)
-    A[b,] <- clust_model$mod.fit$comp
-    
-    ## [LEGACY] emergency solution if none of the initialisations for MyGMM3 work
-    #A[b,] <- MyMCLUST(xx_sub, k)$mod.fit$classification
-    #A[b,] <- kmeans(xx_sub, k)$cluster
+    clust_model <- GMMwrapper(xx = xx_sub, k = k)
+    if(length(clust_model$model_fit$comp) < n_sub){
+      #hacky alternative if none of the initialisations of the GMM work
+      A[b,] <- kmeans(xx_sub, k)$cluster
+    }else{ 
+      A[b,] <- clust_model$model_fit$comp
+    }
   }
   
   TT <- t(combn(1:B, 2))   #combinations of pairs of subsamples, i.e. (B choose 2)
