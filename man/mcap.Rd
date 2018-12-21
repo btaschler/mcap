@@ -4,7 +4,7 @@
 \name{mcap}
 \alias{mcap}
 \alias{mcap-package}
-\title{mcap: Model-based clustering via adaptive projections.}
+\title{mcap: Model-based clustering in very high dimensions via adaptive projections.}
 \description{
 Model-based clustering in very high dimensions (especially p >> n) via adaptive projections. 
 Clustering is based on Gaussian mixture models in a lower dimensional (projected) space.
