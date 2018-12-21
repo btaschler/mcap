@@ -1,5 +1,5 @@
 
-KMwrapper <- function(xx, k, true_labels = NULL){
+KMwrapper <- function(xx, k, true_labels = NULL, verbose = FALSE){
   #' Wrapper to do K-means clustering
   #'
   #' Standard K-means clustering. 
@@ -29,7 +29,7 @@ KMwrapper <- function(xx, k, true_labels = NULL){
     mod_fit_arr <- vector('list', n_repeats)
     
     for(i in seq(n_repeats)){
-      mod_fit_arr[[i]] <- kmeans(xx, centers = k, iter.max = 50, nstart = 20)
+      mod_fit_arr[[i]] <- stats::kmeans(xx, centers = k, iter.max = 50, nstart = 20)
       aRI_arr[i] <- mclust::adjustedRandIndex(true_labels, mod_fit_arr[[i]]$cluster)  
     }
     max_idx <- which(aRI_arr == max(aRI_arr))[1]
@@ -37,7 +37,7 @@ KMwrapper <- function(xx, k, true_labels = NULL){
     aRI <- mean(aRI_arr, na.rm = TRUE)  
     
   }else{  #no true labels provided
-    mod_fit <- kmeans(xx, centers = k, iter.max = 50, nstart = 100)
+    mod_fit <- stats::kmeans(xx, centers = k, iter.max = 50, nstart = 100)
     aRI <- NA
   }
   return(list('model_fit' = mod_fit, 'aRI' = aRI)) 

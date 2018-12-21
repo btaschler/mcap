@@ -1,16 +1,17 @@
 Package: mcap
 Title: Model-based clustering in high dimensions via adaptive projections
 Description: Using Gaussian mixture models and linear projections (PCA, random 
-             projections) for clustering in very high dimensional settings
+             projections) for clustering in very high dimensional settings.
 Version: 0.1.0
+Depends: R (>= 3.1.0)
 Authors@R: c(person('Bernd', 'Taschler', role = c('aut', 'cre'), email = 'bernd.taschler@dzne.de'), 
              person('Sach', 'Mukherjee', role = c('aut'), email = 'sach.mukherjee@dzne.de'))
 Maintainer: Bernd Taschler <bernd.taschler@gmail.com>
-License: GPL-3.0 + file LICENSE
-Imports: mclust, huge, doParallel, pcaMethods, nethet
-RoxygenNote: 6.0.1
-Suggests: testthat,
-    knitr,
-    rmarkdown
+License: GPL-3
+Imports: foreach, doParallel, parallel, iterators, magrittr, 
+         pcaMethods, nethet, mclust, huge, RandPro, kernlab, 
+         stats, dplyr, tidyverse, utils, methods, RevoUtilsMath
+RoxygenNote: 6.1.0
+Suggests: testthat, knitr, rmarkdown
 Encoding: UTF-8
 VignetteBuilder: knitr

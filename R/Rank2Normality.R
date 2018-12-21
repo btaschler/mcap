@@ -18,7 +18,7 @@ Rank2Normality <- function (xx){
   rr <- apply(xx, 2, rank)
   
   # inverse Normal cdf
-  tt <- qnorm(rr/(n+1))
+  tt <- stats::qnorm(rr/(n+1))
   
   return(tt)
 }

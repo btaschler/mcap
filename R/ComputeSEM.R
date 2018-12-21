@@ -8,5 +8,5 @@ ComputeSEM <- function(x){
   #' @return Standard error of the mean (SEM) of x. 
   #' @export
   
-  return(sd(x, na.rm=TRUE) / sqrt(length(x)-sum(is.na(x))))
+  return(stats::sd(x, na.rm=TRUE) / sqrt(length(x)-sum(is.na(x))))
 }

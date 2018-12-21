@@ -9,5 +9,5 @@ Rand1 <- function(n){
   #' @return Sign vector of length `n`.
   #' @export
   
-  return((round(runif(n)) * 2) - 1)
+  return((round(stats::runif(n)) * 2) - 1)
 }

@@ -34,15 +34,15 @@ ClusterStability <- function(xx, k, B = 10, frac_subsample = 0.75){
     clust_model <- GMMwrapper(xx = xx_sub, k = k)
     if(length(clust_model$model_fit$comp) < n_sub){
       #hacky alternative if none of the initialisations of the GMM work
-      A[b,] <- kmeans(xx_sub, k)$cluster
+      A[b,] <- stats::kmeans(xx_sub, k)$cluster
     }else{ 
       A[b,] <- clust_model$model_fit$comp
     }
   }
   
-  TT <- t(combn(1:B, 2))   #combinations of pairs of subsamples, i.e. (B choose 2)
-  M <- nrow(TT)            #total number of pairs, i.e. B!/(2*(B-2)!)
-  stab <- numeric(M) - 1   #vector of stability measures for each pair of assignments
+  TT <- t(utils::combn(1:B, 2))   #combinations of pairs of subsamples, i.e. (B choose 2)
+  M <- nrow(TT)                   #total number of pairs, i.e. B!/(2*(B-2)!)
+  stab <- numeric(M) - 1          #vector of stability measures for each pair of assignments
   
   ## compute stability of assignments of points in the intersection
   for(m in seq(M)){

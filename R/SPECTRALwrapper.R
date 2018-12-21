@@ -42,7 +42,7 @@ SPECTRALwrapper <- function(xx, k, true_labels = NULL, verbose = FALSE){
                                                     kernel = 'rbfdot', 
                                                     iterations = 1000),
                                      error = identity)
-        if(!is(mod_fit_arr[[i]], 'error')){ break }
+        if(!methods::is(mod_fit_arr[[i]], 'error')){ break }
         init_count <- init_count + 1
       }
       if(init_count >= init_max){ aRI_arr[i] <- NA
@@ -65,7 +65,7 @@ SPECTRALwrapper <- function(xx, k, true_labels = NULL, verbose = FALSE){
       mod_fit <- tryCatch(kernlab::specc(xx, centers = k,  kernel = 'rbfdot', 
                                          iterations = 1000),
                           error = identity)
-      if (!is(mod_fit, 'error')) {break}
+      if (!methods::is(mod_fit, 'error')) {break}
       mod_fit <- NA
       init_count <- init_count + 1
     }

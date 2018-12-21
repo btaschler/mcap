@@ -11,6 +11,11 @@ OptDimClusterStability <- function(xx, k, method = 'PCA',
   #' based on cluster stability by performing a line search over the target 
   #' dimension q.
   #' 
+  #' @author Bernd Taschler \email{bernd.taschler@dzne.de}
+  #' @author Sach Mukherjee \email{sach.mukherjee@dzne.de}
+  #' @seealso \code{\link{GMMwrapper}}
+  #' @seealso \code{\link{runMCAP}}
+  #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters.
   #' @param method Projection method ('PCA' or random projections: 'gaussian',
@@ -30,6 +35,8 @@ OptDimClusterStability <- function(xx, k, method = 'PCA',
   #' @return @param q_star Optimal ("oracle") target dimension (maximises adj. 
   #'                       Rand index). Only available if true labels have been 
   #'                       provided. 
+  #' @importFrom magrittr %>%
+  #' @importFrom foreach %dopar%
   #' @export
   
   ## preliminaries
@@ -45,37 +52,38 @@ OptDimClusterStability <- function(xx, k, method = 'PCA',
   
   ## set up parallel or serial computation
   if(parallel){
-    num_cores <- min(length(c_arr), detectCores()-2)
-    cl <- makeCluster(num_cores)
-    registerDoParallel(cores = num_cores)
+    num_cores <- min(length(c_arr), parallel::detectCores()-2)
+    cl <- parallel::makeCluster(num_cores)
+    doParallel::registerDoParallel(cores = num_cores)
     if(verbose){ 
       cat('\n run line search over target dimension in parallel on ', 
-          getDoParWorkers(), 'cores ... \n')
+          foreach::getDoParWorkers(), 'cores ... \n')
     }
   }else{
-    registerDoSEQ()
+    foreach::registerDoSEQ()
     if(verbose){ 
       cat('\n run line search over target dimension sequentially ... \n')
     }
   }
   
   ## perform line search over target dimension q
-  results_tbl <- foreach(i=1:length(c_arr), 
-                         .export=c('GMMwrapper',
-                                   'GramPCA',
-                                   'RandProject',
-                                   'ClusterStability'),
-                         .packages=c('mclust',
-                                     'nethet',
-                                     'pcaMethods',
-                                     'RandPro',
-                                     'tidyverse'),
-                         .combine = rbind, .multicombine=FALSE,
-                         .init = tibble('q' = integer(), 
-                                        'aRI' = numeric(),
-                                        'stability' = numeric())) %dopar% 
+  i <- 0  #initialise to prevent warning in code check that i is a global variable
+  results_tbl <- foreach::foreach(i=1:length(c_arr), 
+                                  .export=c('GMMwrapper',
+                                            'GramPCA',
+                                            'RandProject',
+                                            'ClusterStability'),
+                                  .packages=c('mclust',
+                                              'nethet',
+                                              'pcaMethods',
+                                              'RandPro',
+                                              'tidyverse'),
+                                  .combine = rbind, .multicombine=FALSE,
+                                  .init = dplyr::tibble('q' = integer(), 
+                                                            'aRI' = numeric(),
+                                                            'stability' = numeric())) %dopar% 
   { 
-    if(parallel){ setMKLthreads(1) }  #prevent multi-threading (!)
+    if(parallel){ RevoUtilsMath::setMKLthreads(1) }  #prevent multi-threading (!)
     
     ## set current target dimension
     curr_q <- max(k, min(p, floor(sqrt(c_arr[i] * n / k))))
@@ -102,18 +110,19 @@ OptDimClusterStability <- function(xx, k, method = 'PCA',
     }
     
     ## combine results
-    tbl_out <- tibble('q' = curr_q, 
-                      'aRI' = curr_aRI,
-                      'stability' = curr_stability)
+    tbl_out <- dplyr::tibble('q' = curr_q, 
+                                 'aRI' = curr_aRI,
+                                 'stability' = curr_stability)
     return(tbl_out)
   }
   ## shut down parallel computing
-  if(parallel){ stopCluster(cl) }
+  if(parallel){ parallel::stopCluster(cl) }
   closeAllConnections()
   
     
   ## find optimal target dimension
-  tmp <- (results_tbl %>% filter(., stability == max(stability, na.rm = TRUE)))[1,]
+  tmp <- (results_tbl %>% dplyr::filter(results_tbl$stability, 
+            results_tbl$stability == max(results_tbl$stability, na.rm = TRUE)))[1,]
   q_opt <- tmp$q
   stab_max <- tmp$stability
   
@@ -122,7 +131,8 @@ OptDimClusterStability <- function(xx, k, method = 'PCA',
     if(sum(is.na(results_tbl$aRI)) == nrow(results_tbl)){
       q_oracle <- NA 
     }else{
-      q_oracle <- (results_tbl %>% filter(., aRI == max(aRI, na.rm = TRUE)))$q[1]
+      q_oracle <- (results_tbl %>% dplyr::filter(results_tbl$aRI, 
+                     results_tbl$aRI == max(results_tbl$aRI, na.rm = TRUE)))$q[1]
     }
   }else{ q_oracle <- NA }
 

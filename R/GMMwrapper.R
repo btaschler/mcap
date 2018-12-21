@@ -7,6 +7,11 @@ GMMwrapper <- function(xx, k, criterion = 'mmdl',
   #' The wrapper performs multiple restarts in case true labels are provided 
   #' (in order to optimise cluster assignments w.r.t. the Rand index).
   #' 
+  #' @author Bernd Taschler \email{bernd.taschler@dzne.de}
+  #' @author Sach Mukherjee \email{sach.mukherjee@dzne.de}
+  #' @seealso \code{\link{runMCAP}}
+  #' @seealso \code{\link{OptDimClusterStability}}
+  #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters.
   #' @param criterion Optimisation criterion (`"bic"` or `"mmdl"`). Default: `"mmdl"`.
@@ -33,9 +38,9 @@ GMMwrapper <- function(xx, k, criterion = 'mmdl',
   }
   n_repeats <- 50
   mod_fit_arr <- vector('list',n_repeats)
-  mod_results <- tibble('bic' = numeric(n_repeats),
-                        'mmdl' = numeric(n_repeats),
-                        'aRI' = numeric(n_repeats))
+  mod_results <- dplyr::tibble('bic' = numeric(n_repeats),
+                               'mmdl' = numeric(n_repeats),
+                               'aRI' = numeric(n_repeats))
   
   ## compute mixture models based on different initialisation variants
   init_max <- 10
@@ -51,7 +56,7 @@ GMMwrapper <- function(xx, k, criterion = 'mmdl',
                                     iter.max.kmeans = 10, term = 1e-3,
                                     modelname.hc = 'VVV'), 
                           error=identity)
-        if(!is(curr_mod, 'error')){ break }
+        if(!methods::is(curr_mod, 'error')){ break }
         init_count <- init_count+1
       }
       
@@ -62,7 +67,7 @@ GMMwrapper <- function(xx, k, criterion = 'mmdl',
                                     init = 'hc', term = 1e-3,
                                     modelname.hc = 'VVV'), 
                           error=identity)
-        if(!is(curr_mod, 'error')){ break }
+        if(!methods::is(curr_mod, 'error')){ break }
         init_count <- init_count+1
       }
       
@@ -74,7 +79,7 @@ GMMwrapper <- function(xx, k, criterion = 'mmdl',
                                     iter.max.kmeans = 10, term = 1e-3,
                                     modelname.hc = 'VVV'), 
                           error=identity)
-        if(!is(curr_mod, 'error')){ break }
+        if(!methods::is(curr_mod, 'error')){ break }
         init_count <- init_count+1
       }
       
@@ -85,7 +90,7 @@ GMMwrapper <- function(xx, k, criterion = 'mmdl',
                                     init = 'r.means', term = 1e-3,
                                     modelname.hc = 'VVV'), 
                           error=identity)
-        if (!is(curr_mod, 'error')) {break}
+        if (!methods::is(curr_mod, 'error')) {break}
         init_count <- init_count+1
       }
     }

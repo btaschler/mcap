@@ -43,16 +43,19 @@ HCLUSTwrapper <- function(xx, k, method = 'ward.D',
     aRI_arr <- numeric(n_repeats)
     mod_fit_arr <- vector('list', n_repeats)    
     for(i in seq(n_repeats)){
-      mod_fit_arr[[i]] <- hclust(dist(xx, method = 'euclidean'), 
-                                 method = method_arr[i])
-      aRI_arr[i] <- adjustedRandIndex(true_labels, cutree(mod_fit_arr[[i]], k=k)) 
+      mod_fit_arr[[i]] <- stats::hclust(stats::dist(xx, method = 'euclidean'), 
+                                        method = method_arr[i])
+      aRI_arr[i] <- mclust::adjustedRandIndex(true_labels, 
+                                              stats::cutree(mod_fit_arr[[i]], 
+                                                            k=k)) 
     }
     max_idx <- which(aRI_arr == max(aRI_arr, na.rm = TRUE))[1]
     mod_fit <- mod_fit_arr[[max_idx]]
     aRI <- aRI_arr[max_idx]  
     
   }else{  #no true labels provided
-    mod_fit <- hclust(dist(xx, method = 'euclidean'), method = method)
+    mod_fit <- stats::hclust(stats::dist(xx, method = 'euclidean'), 
+                             method = method)
     aRI <- NA
   }
   
