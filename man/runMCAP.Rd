@@ -13,8 +13,8 @@ runMCAP(xx, k, projection = "PCA", true_labels = NULL,
 
 \item{k}{The number of clusters.}
 
-\item{projection}{Projection method (`"PCA"`, `"gaussian"`, `"achlioptas"` 
-or `"li"`). Default: `"PCA"`.}
+\item{projection}{Projection method (\code{"PCA"}, \code{"gaussian"}, 
+\code{"achlioptas"} or \code{"li"}). Default: \code{"PCA"}.}
 
 \item{true_labels}{Vector of true cluster assignments (when provided, it is 
 used to compute the Rand index).}
@@ -27,13 +27,15 @@ dimension in parallel.}
 
 \item{verbose}{Logical, when true: print some progress information.}
 
-\item{...}{Additional options for `OptDimClusterStability()` and `GMMwrapper()`.}
+\item{...}{Additional options for \code{\link{OptDimClusterStability}} and
+\code{\link{GMMwrapper}}.}
 }
 \value{
-@param fit_gmm Model fit (GMM output of `mixglasso()`), including
-               BIC, MMDL and adj. Rand index (when `true_labels` are provided).
+\item{fit_gmm}{ Model fit (GMM output of \code{\link[nethet]{mixglasso}}), 
+                        including BIC, MMDL and adj. Rand index (when 
+                        \code{true_labels} is provided).}
 
-@param fit_q_opt Output of `OptDimClusterStability()`.
+\item{fit_q_opt}{ Output of \code{\link{OptDimClusterStability}}.}
 }
 \description{
 Model based clustering using full variance Gaussian mixtures in a lower
@@ -50,7 +52,7 @@ Taschler, B., Dondelinger, F. and Mukherjee, S. (2019)
 \code{\link{OptDimClusterStability}}
 }
 \author{
-Bernd Taschler \email{bernd.taschler@dzne.de}
+Bernd Taschler: \email{bernd.taschler@dzne.de}
 
-Sach Mukherjee \email{sach.mukherjee@dzne.de}
+Sach Mukherjee: \email{sach.mukherjee@dzne.de}
 }

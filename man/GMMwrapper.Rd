@@ -12,7 +12,8 @@ GMMwrapper(xx, k, criterion = "mmdl", true_labels = NULL,
 
 \item{k}{The number of clusters.}
 
-\item{criterion}{Optimisation criterion (`"bic"` or `"mmdl"`). Default: `"mmdl"`.}
+\item{criterion}{Optimisation criterion (\code{bic} or \code{mmdl}). 
+Default: \code{mmdl}.}
 
 \item{true_labels}{Vector of true cluster assignments (when provided, it is 
 used to compute the Rand index).}
@@ -20,9 +21,9 @@ used to compute the Rand index).}
 \item{verbose}{Logical, when true: print progress information.}
 }
 \value{
-@param model_fit Model fit (output of `mixglasso()`).
+\item{model_fit}{ Model fit (output of \code{\link[nethet]{mixglasso}}).}
 
-@param aRI Adjusted Rand index (when `true_labels` are provided).
+\item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided).}
 }
 \description{
 Full covariance Gaussian mixture modelling based on the nethet package. 
@@ -35,7 +36,7 @@ The wrapper performs multiple restarts in case true labels are provided
 \code{\link{OptDimClusterStability}}
 }
 \author{
-Bernd Taschler \email{bernd.taschler@dzne.de}
+Bernd Taschler: \email{bernd.taschler@dzne.de}
 
-Sach Mukherjee \email{sach.mukherjee@dzne.de}
+Sach Mukherjee: \email{sach.mukherjee@dzne.de}
 }

@@ -8,8 +8,8 @@ runMCAP <- function(xx, k, projection = 'PCA',
   #' dimensional projected space obtained via adaptive (linear) projections.
   #' Projection variants include PCA-based and random projection. 
   #' 
-  #' @author Bernd Taschler \email{bernd.taschler@dzne.de}
-  #' @author Sach Mukherjee \email{sach.mukherjee@dzne.de}
+  #' @author Bernd Taschler: \email{bernd.taschler@dzne.de}
+  #' @author Sach Mukherjee: \email{sach.mukherjee@dzne.de}
   #' @references Taschler, B., Dondelinger, F. and Mukherjee, S. (2019) 
   #'             Model based clustering via adaptive projections \url{https://arxiv.org/pdf/??.pdf}
   #' @seealso \code{\link{GMMwrapper}}
@@ -17,8 +17,8 @@ runMCAP <- function(xx, k, projection = 'PCA',
   #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters.
-  #' @param projection Projection method (`"PCA"`, `"gaussian"`, `"achlioptas"` 
-  #'                   or `"li"`). Default: `"PCA"`.
+  #' @param projection Projection method (\code{"PCA"}, \code{"gaussian"}, 
+  #'                   \code{"achlioptas"} or \code{"li"}). Default: \code{"PCA"}.
   #' @param true_labels Vector of true cluster assignments (when provided, it is 
   #'                    used to compute the Rand index). 
   #' @param centering_per_group Logical, when true: mean centre input matrix (if true 
@@ -26,11 +26,13 @@ runMCAP <- function(xx, k, projection = 'PCA',
   #' @param parallel Logical, when true: perform line search over projection 
   #'                 dimension in parallel. 
   #' @param verbose Logical, when true: print some progress information. 
-  #' @param ... Additional options for `OptDimClusterStability()` and `GMMwrapper()`. 
+  #' @param ... Additional options for \code{\link{OptDimClusterStability}} and
+  #'            \code{\link{GMMwrapper}}. 
   #' 
-  #' @return @param fit_gmm Model fit (GMM output of `mixglasso()`), including
-  #'                BIC, MMDL and adj. Rand index (when `true_labels` are provided).
-  #' @return @param fit_q_opt Output of `OptDimClusterStability()`.
+  #' @return \item{fit_gmm}{ Model fit (GMM output of \code{\link[nethet]{mixglasso}}), 
+  #'                         including BIC, MMDL and adj. Rand index (when 
+  #'                         \code{true_labels} is provided).}
+  #' @return \item{fit_q_opt}{ Output of \code{\link{OptDimClusterStability}}.}
   #' @export
   
   ## input checks

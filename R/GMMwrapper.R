@@ -7,20 +7,21 @@ GMMwrapper <- function(xx, k, criterion = 'mmdl',
   #' The wrapper performs multiple restarts in case true labels are provided 
   #' (in order to optimise cluster assignments w.r.t. the Rand index).
   #' 
-  #' @author Bernd Taschler \email{bernd.taschler@dzne.de}
-  #' @author Sach Mukherjee \email{sach.mukherjee@dzne.de}
+  #' @author Bernd Taschler: \email{bernd.taschler@dzne.de}
+  #' @author Sach Mukherjee: \email{sach.mukherjee@dzne.de}
   #' @seealso \code{\link{runMCAP}}
   #' @seealso \code{\link{OptDimClusterStability}}
   #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters.
-  #' @param criterion Optimisation criterion (`"bic"` or `"mmdl"`). Default: `"mmdl"`.
+  #' @param criterion Optimisation criterion (\code{bic} or \code{mmdl}). 
+  #'                  Default: \code{mmdl}.
   #' @param true_labels Vector of true cluster assignments (when provided, it is 
   #'                    used to compute the Rand index). 
   #' @param verbose Logical, when true: print progress information. 
   #' 
-  #' @return @param model_fit Model fit (output of `mixglasso()`).
-  #' @return @param aRI Adjusted Rand index (when `true_labels` are provided).
+  #' @return \item{model_fit}{ Model fit (output of \code{\link[nethet]{mixglasso}}).}
+  #' @return \item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided).}
   #' @export
   
   ## input checks

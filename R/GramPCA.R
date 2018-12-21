@@ -8,7 +8,7 @@ GramPCA <- function(xx, npc) {
   #' @param xx The data matrix (n x p).
   #' @param npc The number of principal components to be returned. 
   #' 
-  #' @return @param zz Principal components (n x npc).
+  #' @return \item{zz}{Principal components (n x npc).}
   #' @export
   
   
