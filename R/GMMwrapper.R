@@ -8,9 +8,9 @@ GMMwrapper <- function(xx, k, criterion = 'mmdl',
   #' (in order to optimise cluster assignments w.r.t. the Rand index).
   #' 
   #' @author Bernd Taschler: \email{bernd.taschler@dzne.de}
-  #' @author Sach Mukherjee: \email{sach.mukherjee@dzne.de}
-  #' @seealso \code{\link{runMCAP}}
+  #' @seealso \code{\link{MCAPfit}}
   #' @seealso \code{\link{OptDimClusterStability}}
+  #' @seealso \code{\link{mclust::adjustedRandIndex}}
   #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters.

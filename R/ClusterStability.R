@@ -8,6 +8,11 @@ ClusterStability <- function(xx, k, B = 10, frac_subsample = 0.75){
   #' Measure of cluster stability is based on the adjusted Rand index
   #' of shared points given two subsets of the data. 
   #' 
+  #' @author Bernd Taschler: \email{bernd.taschler@dzne.de}
+  #' @author Sach Mukherjee: \email{sach.mukherjee@dzne.de}
+  #' @seealso \code{\link{GMMwrapper}}
+  #' @seealso \code{\link{mclust::adjustedRandIndex}}
+  #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters. 
   #' @param B The number of subsamples to be used (default: B=10). Note that if

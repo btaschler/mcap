@@ -6,14 +6,20 @@ SPECTRALwrapper <- function(xx, k, true_labels = NULL, verbose = FALSE){
   #' The wrapper performs multiple restarts in case true labels are provided 
   #' (in order to optimise cluster assignments w.r.t. the Rand index).
   #' 
+  #' @author Bernd Taschler \email{bernd.taschler@dzne.de}
+  #' @seealso \code{\link{GMMwrapper}}
+  #' @seealso \code{\link{MCAPfit}}
+  #' @seealso \code{\link{kernlab::specc}}
+  #' @seealso \code{\link{mclust::adjustedRandIndex}}
+  #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters.
   #' @param true_labels Vector of true cluster assignments (when provided, it is 
   #'                    used to compute the Rand index). 
   #' @param verbose Logical, when true: print progress information. 
   #' 
-  #' @return @param model_fit Model fit (output of `mixglasso()`).
-  #' @return @param aRI Adjusted Rand index (when `true_labels` are provided).
+  #' @return \item{model_fit}{ Model fit (output of \code{\link{mixglasso}})}.
+  #' @return \item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided)}.
   #' @export
   
   ## input checks

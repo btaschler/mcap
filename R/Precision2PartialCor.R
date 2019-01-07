@@ -5,9 +5,11 @@ Precision2PartialCor <- function(xx){
   #' This function takes an inverse covariance (or precision) matrix as input 
   #' and computes the partial correlation matrix.
   #' 
+  #' @author Bernd Taschler: \email{bernd.taschler@dzne.de}
+  #' 
   #' @param xx The inverse covariance matrix.
   #' 
-  #' @return @param pcor The partial correlation matrix. 
+  #' @return \item{pcor}{ The partial correlation matrix}. 
   #' @export
   
   x <- as.matrix(xx)

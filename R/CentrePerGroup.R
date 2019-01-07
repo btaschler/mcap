@@ -6,12 +6,13 @@ CentrePerGroup <- function(xx, true_labels = numeric(nrow(xx))){
   #' groups/clusters are centred individually. 
   #' 
   #' @author Bernd Taschler \email{bernd.taschler@dzne.de}
+  #' @seealso \code{\link{colMeans}}
   #' 
   #' @param xx The data matrix (n x p).
   #' @param true_labels Vector of true cluster assignments. Default: 0 (all 
   #'                    elements are treated as belonging to one group).
   #' 
-  #' @return @param xx_centred Mean centred data matrix.
+  #' @return \item{xx_centred}{ Mean centred data matrix.}
   #' @export
   
   # preliminaries ------------------------------------------------------------

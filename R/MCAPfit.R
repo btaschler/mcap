@@ -1,7 +1,7 @@
 
-runMCAP <- function(xx, k, projection = 'PCA',
-                 true_labels = NULL, centering_per_group = FALSE, 
-                 parallel = FALSE, verbose = FALSE, ...){
+MCAPfit <- function(xx, k, projection = 'PCA',
+                    true_labels = NULL, centering_per_group = FALSE, 
+                    parallel = FALSE, verbose = FALSE, ...){
   #' Model based clustering via adaptive (linear) projections
   #'
   #' Model based clustering using full variance Gaussian mixtures in a lower

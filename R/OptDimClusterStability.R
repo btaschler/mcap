@@ -14,27 +14,29 @@ OptDimClusterStability <- function(xx, k, method = 'PCA',
   #' @author Bernd Taschler \email{bernd.taschler@dzne.de}
   #' @author Sach Mukherjee \email{sach.mukherjee@dzne.de}
   #' @seealso \code{\link{GMMwrapper}}
-  #' @seealso \code{\link{runMCAP}}
+  #' @seealso \code{\link{MCAPfit}}
   #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters.
-  #' @param method Projection method ('PCA' or random projections: 'gaussian',
-  #'               'achlioptas' or 'li'). Default: `"PCA"`.
+  #' @param method Projection method (\code{"PCA"} or random projections: 
+  #'               \code{"gaussian"}, \code{"achlioptas"} or \code{"li"}). 
+  #'               Default: \code{"PCA"}.
   #' @param n_grid Number of values to be used in the line search for optimal
   #'               projection dimension. Default: 5.
   #' @param q_max Maximum target dimension to be used in line search. (Note: 
-  #'              the smallest target dimension is always `k`, the maximum may
-  #'              not exceed the total dimensionality p). Default: sqrt(10n/k).
+  #'              the smallest target dimension is always \code{k}, 
+  #'              the maximum may not exceed the total dimensionality p). 
+  #'              Default: \code{sqrt(10n/k)}.
   #' @param true_labels Vector of true cluster assignments (if provided, it is 
-  #'                    used to compute the Rand index and q_star).
-  #' @param parallel Logical, if true: perform line search over q in parallel. 
+  #'                    used to compute the Rand index and \code{q_star}).
+  #' @param parallel Logical, if true: perform line search over \code{q} in parallel. 
   #' @param verbose Logical, if true: print progress information. 
   #' 
-  #' @return @param q_opt Optimal target dimension (maximises cluster stability).
-  #' @return @param stab_score Stability measure for q_opt. 
-  #' @return @param q_star Optimal ("oracle") target dimension (maximises adj. 
-  #'                       Rand index). Only available if true labels have been 
-  #'                       provided. 
+  #' @return \item{q_opt}{ Optimal target dimension (maximises cluster stability).}
+  #' @return \item{stab_score}{ Stability measure for \code{q_opt}.}
+  #' @return \item{q_star}{ Optimal ("oracle") target dimension (maximises adj. 
+  #'                        Rand index). Only available if true labels have been 
+  #'                        provided.}
   #' @importFrom magrittr %>%
   #' @importFrom foreach %dopar%
   #' @export

@@ -8,17 +8,22 @@ HCLUSTwrapper <- function(xx, k, method = 'ward.D',
   #' The wrapper can perform an optimisation over clustering methods in case 
   #' true labels are provided (i.e. optimising cluster assignments w.r.t. the Rand index).
   #' 
+  #' @author Bernd Taschler: \email{bernd.taschler@dzne.de}
+  #' @seealso \code{\link{stats::hclust}}
+  #' @seealso \code{\link{mclust::adjustedRandIndex}}
+  #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters.
-  #' @param method Clustering method (see `hclust`). If `method == "all"` and 
-  #'        true labels are provided: optimise clustering w.r.t. Rand index 
-  #'        and return method with highest adjusted RI. Default: `"Ward.D"`.
+  #' @param method Clustering method (see \code{\link{stats::hclust}}). 
+  #'               If \code{method = "all"} and \code{true_labels} is provided: 
+  #'               optimise clustering w.r.t. Rand index  and return method 
+  #'               with highest adjusted RI. Default: \code{method = "Ward.D"}.
   #' @param true_labels Vector of true cluster assignments (when provided, it is 
   #'                    used to compute the Rand index). 
   #' @param verbose Logical, when true: print progress information. 
   #' 
-  #' @return @param model_fit Model fit (output of `mixglasso()`).
-  #' @return @param aRI Adjusted Rand index (when `true_labels` are provided).
+  #' @return \item{model_fit}{ Model fit (output of \code{\link{stats:hclust}}).}
+  #' @return \item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided).}
   #' @export
   
   ## input checks
