@@ -10,16 +10,20 @@ ClusterStability <- function(xx, k, B = 10, frac_subsample = 0.75){
   #' 
   #' @author Bernd Taschler: \email{bernd.taschler@dzne.de}
   #' @author Sach Mukherjee: \email{sach.mukherjee@dzne.de}
-  #' @seealso \code{\link{GMMwrapper}}
-  #' @seealso \code{\link{mclust::adjustedRandIndex}}
+  #' @seealso \code{\link{MCAPfit}}, 
+  #'          \code{\link{OptDimClusterStability}}, 
+  #'          \code{\link{GMMwrapper}}, 
+  #'          \code{\link[mclust]{adjustedRandIndex}}
   #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters. 
-  #' @param B The number of subsamples to be used (default: B=10). Note that if
-  #'          B is too small (<10), the variance of the stability estimate increases.
-  #' @param frac_subsample Fraction of total samples to be used in each subsample (default: 0.75).
+  #' @param B The number of subsamples to be used (default: \code{B=10}). 
+  #'          Note that if \code{B} is too small (<10), the variance of the 
+  #'          stability estimate increases.
+  #' @param frac_subsample Fraction of total samples to be used in each 
+  #'                       subsample (default: 0.75).
   #' 
-  #' @return @param stab Measure of cluster stability.
+  #' @return \item{stab}{ Measure of cluster stability.}
   #' @export
   
   ## preliminaries
@@ -31,7 +35,7 @@ ClusterStability <- function(xx, k, B = 10, frac_subsample = 0.75){
   
   ## make matrices of indices and assignments
   for(b in seq(B)){ 
-    idx <- sample(n_tot, n_sub)
+    idx <- sort(sample(n_tot, n_sub))
     I[b,] <- idx
     xx_sub <- xx[idx,]
     
@@ -58,7 +62,7 @@ ClusterStability <- function(xx, k, B = 10, frac_subsample = 0.75){
     assignments1 <- A[i,] 
     assignments2 <- A[j,]
     
-    shared_idx <- intersect(idx1, idx2)
+    shared_idx <- sort(intersect(idx1, idx2))
     shared_idx1 <- which(idx1 %in% shared_idx)
     shared_idx2 <- which(idx2 %in% shared_idx)
     
