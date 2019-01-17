@@ -18,3 +18,11 @@ GramPCA(xx, npc)
 This function performs PCA using the eigenvectors of the Gram matrix G 
 (G=X*X') when n < p, or standard PCA when n > p.
 }
+\seealso{
+\code{\link[pcaMethods]{pca}}
+
+\code{\link{eigen}}
+}
+\author{
+Bernd Taschler: \email{bernd.taschler@dzne.de}
+}

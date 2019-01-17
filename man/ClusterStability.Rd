@@ -11,10 +11,12 @@ ClusterStability(xx, k, B = 10, frac_subsample = 0.75)
 
 \item{k}{The number of clusters.}
 
-\item{B}{The number of subsamples to be used (default: B=10). Note that if
-B is too small (<10), the variance of the stability estimate increases.}
+\item{B}{The number of subsamples to be used (default: \code{B=10}). 
+Note that if \code{B} is too small (<10), the variance of the 
+stability estimate increases.}
 
-\item{frac_subsample}{Fraction of total samples to be used in each subsample (default: 0.75).}
+\item{frac_subsample}{Fraction of total samples to be used in each 
+subsample (default: 0.75).}
 }
 \value{
 @param stab Measure of cluster stability.
@@ -25,4 +27,15 @@ subsamples of size m < n (where n is the total sample size). Default for
 m=0.75n. Clustering is done using a full covariance Gaussian mixture model.
 Measure of cluster stability is based on the adjusted Rand index
 of shared points given two subsets of the data.
+}
+\seealso{
+\code{\link{MCAPfit}}, 
+         \code{\link{OptDimClusterStability}}, 
+         \code{\link{GMMwrapper}}, 
+         \code{\link[mclust]{adjustedRandIndex}}
+}
+\author{
+Bernd Taschler: \email{bernd.taschler@dzne.de}
+
+Sach Mukherjee: \email{sach.mukherjee@dzne.de}
 }

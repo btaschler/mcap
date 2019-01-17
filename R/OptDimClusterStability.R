@@ -13,8 +13,9 @@ OptDimClusterStability <- function(xx, k, method = 'PCA',
   #' 
   #' @author Bernd Taschler \email{bernd.taschler@dzne.de}
   #' @author Sach Mukherjee \email{sach.mukherjee@dzne.de}
-  #' @seealso \code{\link{GMMwrapper}}
-  #' @seealso \code{\link{MCAPfit}}
+  #' @seealso \code{\link{MCAPfit}},
+  #'          \code{\link{GMMwrapper}}, 
+  #'          \code{\link{ClusterStability}}
   #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters.
@@ -33,8 +34,8 @@ OptDimClusterStability <- function(xx, k, method = 'PCA',
   #' @param verbose Logical, if true: print progress information. 
   #' 
   #' @return \item{q_opt}{ Optimal target dimension (maximises cluster stability).}
-  #' @return \item{stab_score}{ Stability measure for \code{q_opt}.}
-  #' @return \item{q_star}{ Optimal ("oracle") target dimension (maximises adj. 
+  #'         \item{stab_score}{ Stability measure for \code{q_opt}.}
+  #'         \item{q_star}{ Optimal ("oracle") target dimension (maximises adj. 
   #'                        Rand index). Only available if true labels have been 
   #'                        provided.}
   #' @importFrom magrittr %>%

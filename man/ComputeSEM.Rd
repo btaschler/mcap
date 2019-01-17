@@ -10,7 +10,7 @@ ComputeSEM(x)
 \item{x}{Input vector (any NA will be ignored).}
 }
 \value{
-Standard error of the mean (SEM) of x.
+Standard error of the mean (SEM) of \code{x}.
 }
 \description{
 Compute standard error of the mean for an input vector

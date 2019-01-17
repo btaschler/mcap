@@ -13,12 +13,12 @@ CentrePerGroup(xx, true_labels = numeric(nrow(xx)))
 elements are treated as belonging to one group).}
 }
 \value{
-@param xx_centred Mean centred data matrix.
+\item{xx_centred}{ Mean centred data matrix.}
 }
 \description{
 Mean centering of an input matrix. When true labels are provided, the 
 groups/clusters are centred individually.
 }
-\author{
-Bernd Taschler \email{bernd.taschler@dzne.de}
+\seealso{
+\code{\link{colMeans}}, \code{\link{scale}}
 }

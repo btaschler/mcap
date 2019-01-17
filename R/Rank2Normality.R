@@ -1,10 +1,11 @@
 
-
 Rank2Normality <- function (xx){
   #' Transform data matrix to normality based on rank
   #'
   #' This function performs a rank to normality transformation of the columns
   #' of an input matrix X.
+  #' 
+  #' @seealso \code{\link[stats]{qnorm}}
   #' 
   #' @param xx The data matrix.
   #' 

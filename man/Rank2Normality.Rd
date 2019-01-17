@@ -16,3 +16,6 @@ tt Data matrix transformed to normality.
 This function performs a rank to normality transformation of the columns
 of an input matrix X.
 }
+\seealso{
+\code{\link[stats]{qnorm}}
+}

@@ -7,10 +7,10 @@ SPECTRALwrapper <- function(xx, k, true_labels = NULL, verbose = FALSE){
   #' (in order to optimise cluster assignments w.r.t. the Rand index).
   #' 
   #' @author Bernd Taschler \email{bernd.taschler@dzne.de}
-  #' @seealso \code{\link{GMMwrapper}}
-  #' @seealso \code{\link{MCAPfit}}
-  #' @seealso \code{\link{kernlab::specc}}
-  #' @seealso \code{\link{mclust::adjustedRandIndex}}
+  #' @seealso \code{\link{MCAPfit}}, 
+  #'          \code{\link{GMMwrapper}}, 
+  #'          \code{\link[kernlab]{specc}}, 
+  #'          \code{\link[mclust]{adjustedRandIndex}}
   #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters.
@@ -19,7 +19,7 @@ SPECTRALwrapper <- function(xx, k, true_labels = NULL, verbose = FALSE){
   #' @param verbose Logical, when true: print progress information. 
   #' 
   #' @return \item{model_fit}{ Model fit (output of \code{\link{mixglasso}})}.
-  #' @return \item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided)}.
+  #'         \item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided)}.
   #' @export
   
   ## input checks

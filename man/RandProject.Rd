@@ -11,9 +11,9 @@ RandProject(xx, q, method = "gaussian")
 
 \item{q}{The target dimension.}
 
-\item{method}{Projection method using either a Gaussian ('gaussian'), 
-a sparse ('achlioptas') or very sparse ('li') projection 
-matrix. Default: 'gaussian'.}
+\item{method}{Projection method using either a Gaussian (\code{"gaussian"}), 
+a sparse (\code{"achlioptas"}) or very sparse (\code{"li"}) projection 
+matrix. Default: \code{"gaussian"}.}
 }
 \value{
 Projected matrix (n x q).
@@ -21,4 +21,7 @@ Projected matrix (n x q).
 \description{
 Perform a random projection (Gauss, Achlioptas or Li) of the input matrix X.
 Based on the RandPro package.
+}
+\seealso{
+\code{\link[RandPro]{form_matrix}}
 }

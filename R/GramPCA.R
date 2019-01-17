@@ -6,8 +6,7 @@ GramPCA <- function(xx, npc) {
   #' (G=X*X') when n < p, or standard PCA when n > p.
   #' 
   #' @author Bernd Taschler: \email{bernd.taschler@dzne.de}
-  #' @author Sach Mukherjee: \email{sach.mukherjee@dzne.de}
-  #' @seealso \code{\link{pcaMethods::pca}}
+  #' @seealso \code{\link[pcaMethods]{pca}}
   #' @seealso \code{\link{eigen}}
   #' 
   #' @param xx The data matrix (n x p).

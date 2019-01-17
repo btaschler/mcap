@@ -6,8 +6,8 @@ KMwrapper <- function(xx, k, true_labels = NULL, verbose = FALSE){
   #' The wrapper performs multiple restarts in case true labels are provided 
   #' (in order to optimise cluster assignments w.r.t. the Rand index).
   #' 
-  #' @seealso \code{\link{stats::kmeans}}
-  #' @seealso \code{\link{mclust::adjustedRandIndex}}
+  #' @seealso \code{\link[stats]{kmeans}}, 
+  #'          \code{\link[mclust]{adjustedRandIndex}}
   #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters.
@@ -15,8 +15,8 @@ KMwrapper <- function(xx, k, true_labels = NULL, verbose = FALSE){
   #'                    used to compute the Rand index). 
   #' @param verbose Logical, when true: print progress information. 
   #' 
-  #' @return \item{model_fit}{ Model fit (output of \code{\link{stats::kmeans}}).}
-  #' @return \item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided).}
+  #' @return \item{model_fit}{ Model fit (output of \code{\link[stats]{kmeans}}).}
+  #'         \item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided).}
   #' @export
   
   ## input checks

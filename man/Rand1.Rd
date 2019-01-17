@@ -10,8 +10,8 @@ Rand1(n)
 \item{n}{Number of elements}
 }
 \value{
-Sign vector of length `n`.
+Sign vector of length \code{n}.
 }
 \description{
-Create a random sign vector of length `n` (iid ~ +1/-1).
+Create a random sign vector of length \code{n} (iid ~ +1/-1).
 }

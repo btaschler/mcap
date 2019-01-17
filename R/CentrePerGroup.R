@@ -5,8 +5,7 @@ CentrePerGroup <- function(xx, true_labels = numeric(nrow(xx))){
   #' Mean centering of an input matrix. When true labels are provided, the 
   #' groups/clusters are centred individually. 
   #' 
-  #' @author Bernd Taschler \email{bernd.taschler@dzne.de}
-  #' @seealso \code{\link{colMeans}}
+  #' @seealso \code{\link{colMeans}}, \code{\link{scale}}
   #' 
   #' @param xx The data matrix (n x p).
   #' @param true_labels Vector of true cluster assignments. Default: 0 (all 

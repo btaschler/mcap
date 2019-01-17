@@ -17,12 +17,15 @@ used to compute the Rand index).}
 \item{verbose}{Logical, when true: print progress information.}
 }
 \value{
-@param model_fit Model fit (output of `kmeans()`).
+\item{model_fit}{ Model fit (output of \code{\link[stats]{kmeans}}).}
 
-@param aRI Adjusted Rand index (when `true_labels` are provided).
+\item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided).}
 }
 \description{
 Standard K-means clustering. 
 The wrapper performs multiple restarts in case true labels are provided 
 (in order to optimise cluster assignments w.r.t. the Rand index).
+}
+\seealso{
+\code{\link[stats]{kmeans}}, \code{\link[mclust]{adjustedRandIndex}}
 }

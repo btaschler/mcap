@@ -14,31 +14,31 @@ OptDimClusterStability(xx, k, method = "PCA", n_grid = 5,
 
 \item{k}{The number of clusters.}
 
-\item{method}{Projection method ('PCA' or random projections: 'gaussian',
-'achlioptas' or 'li'). Default: `"PCA"`.}
+\item{method}{Projection method (\code{"PCA"} or random projections: 
+\code{"gaussian"}, \code{"achlioptas"} or \code{"li"}). 
+Default: \code{"PCA"}.}
 
 \item{n_grid}{Number of values to be used in the line search for optimal
 projection dimension. Default: 5.}
 
 \item{q_max}{Maximum target dimension to be used in line search. (Note: 
-the smallest target dimension is always `k`, the maximum may
-not exceed the total dimensionality p). Default: sqrt(10n/k).}
+the smallest target dimension is always \code{k}, 
+the maximum may not exceed the total dimensionality p). 
+Default: \code{sqrt(10n/k)}.}
 
 \item{true_labels}{Vector of true cluster assignments (if provided, it is 
-used to compute the Rand index and q_star).}
+used to compute the Rand index and \code{q_star}).}
 
-\item{parallel}{Logical, if true: perform line search over q in parallel.}
+\item{parallel}{Logical, if true: perform line search over \code{q} in parallel.}
 
 \item{verbose}{Logical, if true: print progress information.}
 }
 \value{
-@param q_opt Optimal target dimension (maximises cluster stability).
-
-@param stab_score Stability measure for q_opt.
-
-@param q_star Optimal ("oracle") target dimension (maximises adj. 
-                      Rand index). Only available if true labels have been 
-                      provided.
+\item{q_opt}{ Optimal target dimension (maximises cluster stability).}
+        \item{stab_score}{ Stability measure for \code{q_opt}.}
+        \item{q_star}{ Optimal ("oracle") target dimension (maximises adj. 
+                       Rand index). Only available if true labels have been 
+                       provided.}
 }
 \description{
 Find the optimal projection dimension for PCA or random projections 
@@ -46,9 +46,9 @@ based on cluster stability by performing a line search over the target
 dimension q.
 }
 \seealso{
-\code{\link{GMMwrapper}}
-
-\code{\link{runMCAP}}
+\code{\link{MCAPfit}},
+         \code{\link{GMMwrapper}}, 
+         \code{\link{ClusterStability}}
 }
 \author{
 Bernd Taschler \email{bernd.taschler@dzne.de}

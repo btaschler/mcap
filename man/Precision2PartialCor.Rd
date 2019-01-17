@@ -10,9 +10,12 @@ Precision2PartialCor(xx)
 \item{xx}{The inverse covariance matrix.}
 }
 \value{
-@param pcor The partial correlation matrix.
+\item{pcor}{ The partial correlation matrix}.
 }
 \description{
 This function takes an inverse covariance (or precision) matrix as input 
 and computes the partial correlation matrix.
+}
+\author{
+Bernd Taschler: \email{bernd.taschler@dzne.de}
 }

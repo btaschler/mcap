@@ -5,7 +5,7 @@ RandProject <- function(xx, q, method = 'gaussian'){
   #' Perform a random projection (Gauss, Achlioptas or Li) of the input matrix X.
   #' Based on the RandPro package. 
   #' 
-  #' @seealso \code{\link{RandPro::form_matrix}}
+  #' @seealso \code{\link[RandPro]{form_matrix}}
   #' 
   #' @param xx The data matrix (n x p).
   #' @param q The target dimension. 
@@ -17,8 +17,11 @@ RandProject <- function(xx, q, method = 'gaussian'){
   #' @export
   
   p <- ncol(xx)
-  rr <- RandPro::form_matrix(rows = p, cols = q, JLT = FALSE, 
-                             eps = 0.1, projection =  method)
+  rr <- RandPro::form_matrix(rows = p, 
+                             cols = q, 
+                             JLT = FALSE, 
+                             eps = 0.1, 
+                             projection = method)
 
   return(xx %*% rr)
 }

@@ -12,8 +12,8 @@ GMMwrapper(xx, k, criterion = "mmdl", true_labels = NULL,
 
 \item{k}{The number of clusters.}
 
-\item{criterion}{Optimisation criterion (\code{bic} or \code{mmdl}). 
-Default: \code{mmdl}.}
+\item{criterion}{Optimisation criterion (\code{"bic"} or \code{"mmdl"}). 
+Default: \code{"mmdl"}.}
 
 \item{true_labels}{Vector of true cluster assignments (when provided, it is 
 used to compute the Rand index).}
@@ -31,12 +31,12 @@ The wrapper performs multiple restarts in case true labels are provided
 (in order to optimise cluster assignments w.r.t. the Rand index).
 }
 \seealso{
-\code{\link{runMCAP}}
+\code{\link{MCAPfit}}
 
 \code{\link{OptDimClusterStability}}
+
+\code{\link[mclust]{adjustedRandIndex}}
 }
 \author{
 Bernd Taschler: \email{bernd.taschler@dzne.de}
-
-Sach Mukherjee: \email{sach.mukherjee@dzne.de}
 }

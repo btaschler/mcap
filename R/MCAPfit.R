@@ -4,16 +4,18 @@ MCAPfit <- function(xx, k, projection = 'PCA',
                     parallel = FALSE, verbose = FALSE, ...){
   #' Model based clustering via adaptive (linear) projections
   #'
-  #' Model based clustering using full variance Gaussian mixtures in a lower
-  #' dimensional projected space obtained via adaptive (linear) projections.
+  #' \code{"MCAPfit"} performs model based clustering using full variance 
+  #' Gaussian mixtures in a lower dimensional projected space obtained via 
+  #' adaptive (linear) projections.
   #' Projection variants include PCA-based and random projection. 
   #' 
   #' @author Bernd Taschler: \email{bernd.taschler@dzne.de}
   #' @author Sach Mukherjee: \email{sach.mukherjee@dzne.de}
   #' @references Taschler, B., Dondelinger, F. and Mukherjee, S. (2019) 
   #'             Model based clustering via adaptive projections \url{https://arxiv.org/pdf/??.pdf}
-  #' @seealso \code{\link{GMMwrapper}}
-  #' @seealso \code{\link{OptDimClusterStability}}
+  #' @seealso \code{\link{GMMwrapper}}, 
+  #'          \code{\link{OptDimClusterStability}},
+  #'          \code{\link{ClusterStability}} 
   #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters.
@@ -32,7 +34,19 @@ MCAPfit <- function(xx, k, projection = 'PCA',
   #' @return \item{fit_gmm}{ Model fit (GMM output of \code{\link[nethet]{mixglasso}}), 
   #'                         including BIC, MMDL and adj. Rand index (when 
   #'                         \code{true_labels} is provided).}
-  #' @return \item{fit_q_opt}{ Output of \code{\link{OptDimClusterStability}}.}
+  #'         \item{fit_q_opt}{ Output of \code{\link{OptDimClusterStability}}.}
+  #' 
+  #' @details ...
+  #' 
+  #' @examples 
+  #'   \dontrun{
+  #'   MCAPfit(matrix(rnorm(200),20,10), 2, 'PCA', round(runif(20)), F, F, T)
+  #'   }
+  #'   
+  #'   \dontrun{
+  #'   MCAPfit(matrix(rnorm(5e4),100,500), 2, 'PCA', round(runif(100)), F, F, T)  #' 
+  #'   }
+  #' 
   #' @export
   
   ## input checks
