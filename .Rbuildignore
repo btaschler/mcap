@@ -1,0 +1,5 @@
+^docs$
+^experiments$
+^.*\.Rproj$
+^\.Rproj\.user$
+^README.Rmd
