@@ -2,6 +2,8 @@ context("Run MCAP")
 
 test_that("Full MCAP model fit works", {
   
+  skip_on_cran()   #because test takes too long
+  
   # Easy clustering scenario: expect aRI=1
   n <- 100
   p <- 10

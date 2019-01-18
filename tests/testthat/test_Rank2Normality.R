@@ -9,7 +9,7 @@ test_that("Transformation of matrix to normality based on rank works", {
   
   for(j in seq(p)){
     a <- shapiro.test(xx_transf[,j])
-    expect_equal((a$p.value>0.999), 1)
+    expect_equal((a$p.value>0.999), TRUE)
   }
   
 })
