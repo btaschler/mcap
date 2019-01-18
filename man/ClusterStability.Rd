@@ -19,7 +19,7 @@ stability estimate increases.}
 subsample (default: 0.75).}
 }
 \value{
-@param stab Measure of cluster stability.
+\item{stab}{ Measure of cluster stability.}
 }
 \description{
 Compute cluster stability w.r.t. pairs of data points over B random 

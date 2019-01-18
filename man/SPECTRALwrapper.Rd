@@ -18,8 +18,7 @@ used to compute the Rand index).}
 }
 \value{
 \item{model_fit}{ Model fit (output of \code{\link{mixglasso}})}.
-
-\item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided)}.
+        \item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided)}.
 }
 \description{
 Spectral clustering using an RBF kernel. 
@@ -27,13 +26,10 @@ The wrapper performs multiple restarts in case true labels are provided
 (in order to optimise cluster assignments w.r.t. the Rand index).
 }
 \seealso{
-\code{\link{GMMwrapper}}
-
-\code{\link{MCAPfit}}
-
-\code{\link[kernlab]{specc}}
-
-\code{\link[mclust]{adjustedRandIndex}}
+\code{\link{MCAPfit}}, 
+         \code{\link{GMMwrapper}}, 
+         \code{\link[kernlab]{specc}}, 
+         \code{\link[mclust]{adjustedRandIndex}}
 }
 \author{
 Bernd Taschler \email{bernd.taschler@dzne.de}

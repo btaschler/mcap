@@ -16,6 +16,3 @@ Precision2PartialCor(xx)
 This function takes an inverse covariance (or precision) matrix as input 
 and computes the partial correlation matrix.
 }
-\author{
-Bernd Taschler: \email{bernd.taschler@dzne.de}
-}

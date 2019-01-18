@@ -22,8 +22,7 @@ used to compute the Rand index).}
 }
 \value{
 \item{model_fit}{ Model fit (output of \code{\link[nethet]{mixglasso}}).}
-
-\item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided).}
+        \item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided).}
 }
 \description{
 Full covariance Gaussian mixture modelling based on the nethet package. 
@@ -31,9 +30,9 @@ The wrapper performs multiple restarts in case true labels are provided
 (in order to optimise cluster assignments w.r.t. the Rand index).
 }
 \seealso{
-\code{\link{MCAPfit}}
-
-\code{\link{OptDimClusterStability}}
+\code{\link{MCAPfit}},
+         \code{\link{OptDimClusterStability}},
+         \code{\link{ClusterStability}}
 
 \code{\link[mclust]{adjustedRandIndex}}
 }

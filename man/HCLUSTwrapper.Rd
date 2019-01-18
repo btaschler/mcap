@@ -24,8 +24,7 @@ used to compute the Rand index).}
 }
 \value{
 \item{model_fit}{ Model fit (output of \code{\link[stats]{hclust}}).}
-
-\item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided).}
+        \item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided).}
 }
 \description{
 Hierarchical clustering using Euclidean distances and (by default) 
@@ -34,7 +33,8 @@ The wrapper can perform an optimisation over clustering methods in case
 true labels are provided (i.e. optimising cluster assignments w.r.t. the Rand index).
 }
 \seealso{
-\code{\link[stats]{hclust}}, \code{\link[mclust]{adjustedRandIndex}}
+\code{\link[stats]{hclust}}, 
+         \code{\link[mclust]{adjustedRandIndex}}
 }
 \author{
 Bernd Taschler: \email{bernd.taschler@dzne.de}

@@ -34,8 +34,7 @@ dimension in parallel.}
 \item{fit_gmm}{ Model fit (GMM output of \code{\link[nethet]{mixglasso}}), 
                         including BIC, MMDL and adj. Rand index (when 
                         \code{true_labels} is provided).}
-
-\item{fit_q_opt}{ Output of \code{\link{OptDimClusterStability}}.}
+        \item{fit_q_opt}{ Output of \code{\link{OptDimClusterStability}}.}
 }
 \description{
 \code{"MCAPfit"} performs model based clustering using full variance 
