@@ -1,8 +1,10 @@
 Package: mcap
-Title: Model-based clustering in high dimensions via adaptive projections
+Title: Model-Based Clustering in High Dimensions via Adaptive Projections
 Version: 0.1.0
-Authors@R: c(person('Bernd', 'Taschler', role = c('aut', 'cre'), email = 'bernd.taschler@dzne.de'), 
+Authors@R: c(person('Bernd', 'Taschler', role = c('aut', 'cre'), email = 'bernd.taschler@gmail.com'), 
              person('Sach', 'Mukherjee', role = c('aut'), email = 'sach.mukherjee@dzne.de'))
+Author: Bernd Taschler [aut, cre],
+        Sach Mukherjee [aut]
 Maintainer: Bernd Taschler <bernd.taschler@gmail.com>
 Description: Using Gaussian mixture models and linear projections (PCA, random 
              projections) for clustering in very high dimensional settings.
