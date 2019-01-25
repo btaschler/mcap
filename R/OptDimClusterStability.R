@@ -51,7 +51,8 @@ OptDimClusterStability <- function(xx, k, method = 'PCA',
   stopifnot(method %in% c('PCA', 'gaussian', 'achlioptas', 'li'))
   
   ## hyperparameter for line search over target dimension
-  c_arr <- c(k^3 / n, seq(0.5, max(k, q_max^2*k/n), length = n_grid-1)) 
+  c_arr <- c(k^3 / n, seq(sqrt(0.5), sqrt(max(k, q_max^2*k/n)), 
+                          length = n_grid-1)^2)
   
   ## set up parallel or serial computation
   if(parallel){
