@@ -63,7 +63,7 @@ fid_path <- '//fileserver.dzne.de/taschlerb/DZNE/data/MCAP/generated_data/'
 fid_list <- list.files(fid_path)[1:80]
 
 ## select files to run
-fid_run <- file.path(fid_path, fid_list[c(1:2, 11:12, 21:22, 31:32)])
+fid_run <- file.path(fid_path, fid_list[c(1:5, 11:15, 21:25, 31:35)+5])
 
 
 
@@ -74,8 +74,7 @@ methods_all <- c('mclust', 'mclust_k', 'mclust_r10', 'mclust_a',
                  'RP_sparse_a', 'RP_verysparse_a',
                  'KM', 'KMPP', 'hclust', 'specc', 'mixGLasso')                      
 
-methods_run <- c('KM', 'GGMM_a')
-
+methods_run <- c('GGMM_a', 'RP_a', 'RP_sparse_a', 'RP_verysparse_a')
 
 
 

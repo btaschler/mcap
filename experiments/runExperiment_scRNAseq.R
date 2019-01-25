@@ -87,19 +87,20 @@ runExperiment_scRNAseq <- function(fid_data, methods_arr, dir_out = NULL,
      if(doCentre){ curr_xx <- CentrePerGroup(curr_xx, curr_labels) }
      
      if(any(c('GGMM_a', 'GGMM_o', 'mclust_a') %in% methods_arr)){
-       if(verbose){ cat('opt. dim. (PCA)') } 
+       if(verbose){ cat(' opt. dim. (PCA)') } 
        dummy1 <- OptDimClusterStability(xx = curr_xx, k = curr_k, 
                                         method='PCA', n_grid = 5,
                                         true_labels = curr_labels,
                                         parallel = TRUE)         #NOTE: switch off if outer parallel loop enabled!
        q_opt_pca <- dummy1$q_opt
        q_star_pca <- dummy1$q_oracle
-     }else if(any(c('RP_a', 'RP_o') %in% methods_arr)){
-       if(verbose){ cat('opt. dim. (RP-Gaussian)') } 
+     }
+     if(any(c('RP_a', 'RP_o') %in% methods_arr)){
+       if(verbose){ cat(' opt. dim. (RP-Gaussian)') } 
        dummy2 <- OptDimClusterStability(xx = curr_xx, k = curr_k, 
                                         method='gaussian', n_grid = 5,
                                         true_labels = curr_labels,
-                                        parallel = FALSE)
+                                        parallel = TRUE)         #NOTE: switch off if outer parallel loop enabled!
        q_opt_rp <- dummy2$q_opt
        q_star_rp <- dummy2$q_oracle
      }
@@ -154,9 +155,9 @@ runExperiment_scRNAseq <- function(fid_data, methods_arr, dir_out = NULL,
          dummy <- OptDimClusterStability(curr_xx, k = curr_k, 
                                          true_labels = curr_labels, 
                                          method = 'achlioptas',
-                                         parallel = FALSE)
+                                         parallel = TRUE)  #NOTE: switch off if outer parallel loop enabled!
          if(verbose){ cat('| MCAP-RP-Achlioptas-adapt.') } 
-         curr_q <- dummy$opt_q
+         curr_q <- dummy$q_opt
          curr_fit <- GMMwrapper(RandProject(curr_xx, q = curr_q, method = 'achlioptas'), 
                             k = curr_k, true_labels = curr_labels)
        }else if(m=='RP_verysparse_a'){
@@ -164,9 +165,9 @@ runExperiment_scRNAseq <- function(fid_data, methods_arr, dir_out = NULL,
          dummy <- OptDimClusterStability(curr_xx, k = curr_k, 
                                          true_labels = curr_labels, 
                                          method = 'li',
-                                         parallel = FALSE)
+                                         parallel = TRUE)  #NOTE: switch off if outer parallel loop enabled!
          if(verbose){ cat('| MCAP-RP-Li-adapt.') } 
-         curr_q <- dummy$opt_q
+         curr_q <- dummy$q_opt
          curr_fit <- GMMwrapper(RandProject(curr_xx, q = curr_q, method = 'li'), 
                             k = curr_k, true_labels = curr_labels)
          
