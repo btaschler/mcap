@@ -70,7 +70,8 @@ MCAPfit <- function(xx, k, projection = 'PCA',
                                       verbose = verbose, ...)
   
   ## parameter estimation and GMM clustering with optimised target dimension
-  fit_gmm <- GMMwrapper(xx, k = k, true_labels = true_labels, 
+  fit_gmm <- GMMwrapper(GramPCA(xx, npc = fit_q_opt$q_opt)$zz, 
+                        k = k, true_labels = true_labels, 
                         verbose = verbose, ...)
   
   return(list('fit_gmm' = fit_gmm, 'fit_q_opt' = fit_q_opt))
