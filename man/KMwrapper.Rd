@@ -25,6 +25,9 @@ Standard K-means clustering.
 The wrapper performs multiple restarts in case true labels are provided 
 (in order to optimise cluster assignments w.r.t. the Rand index).
 }
+\examples{
+  KMwrapper(xx = matrix(rnorm(500),50,10), k = 2)
+}
 \seealso{
 \code{\link[stats]{kmeans}}, 
          \code{\link[mclust]{adjustedRandIndex}}

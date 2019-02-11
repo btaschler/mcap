@@ -12,6 +12,15 @@ CentrePerGroup <- function(xx, true_labels = numeric(nrow(xx))){
   #'                    elements are treated as belonging to one group).
   #' 
   #' @return \item{xx_centred}{ Mean centred data matrix.}
+  #' @examples 
+  #'   ## 10x5 matrix, 1 group:
+  #'   CentrePerGroup(xx=matrix(rnorm(50),10,5))
+  #'   
+  #'   ## 2 groups:
+  #'   CentrePerGroup(xx=matrix(rnorm(50),10,5), true_labels=round(runif(10)))
+  #'   
+  #'   ## 10 groups:
+  #'   CentrePerGroup(xx=matrix(rnorm(5000),100,50), true_labels=round(runif(100)*10))
   #' @export
   
   # preliminaries ------------------------------------------------------------

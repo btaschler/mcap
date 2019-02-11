@@ -20,6 +20,8 @@ SPECTRALwrapper <- function(xx, k, true_labels = NULL, verbose = FALSE){
   #' 
   #' @return \item{model_fit}{ Model fit (output of \code{\link{mixglasso}})}.
   #'         \item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided)}.
+  #' @examples 
+  #'   SPECTRALwrapper(xx = matrix(rnorm(500),50), k=2)
   #' @export
   
   ## input checks
@@ -33,14 +35,14 @@ SPECTRALwrapper <- function(xx, k, true_labels = NULL, verbose = FALSE){
   if(ncol(xx) > p_max){
     warning(' Spectral clustering: data matrix too large - aborting ...')
     return(list('model_fit' = NA, 'aRI' = NA))
-  }  
+  } 
+  init_max <- 100
   
   if(length(true_labels)>0){
     n_repeats <- 5
     aRI_arr <- numeric(n_repeats)
     mod_fit_arr <- vector('list', n_repeats)
     
-    init_max <- 100
     for(i in seq(n_repeats)){
       init_count <- 0
       while (init_count < init_max) {
@@ -75,7 +77,7 @@ SPECTRALwrapper <- function(xx, k, true_labels = NULL, verbose = FALSE){
       mod_fit <- NA
       init_count <- init_count + 1
     }
-    if(is.na(mod_fit)){ 
+    if(is.na(mod_fit[1])){ 
       warning('! Spectral clustering: all initialisations returned an error !') 
     }
     aRI <- NA

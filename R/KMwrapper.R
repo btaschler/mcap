@@ -17,6 +17,8 @@ KMwrapper <- function(xx, k, true_labels = NULL, verbose = FALSE){
   #' 
   #' @return \item{model_fit}{ Model fit (output of \code{\link[stats]{kmeans}}).}
   #'         \item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided).}
+  #' @examples 
+  #'   KMwrapper(xx = matrix(rnorm(500),50,10), k = 2)
   #' @export
   
   ## input checks

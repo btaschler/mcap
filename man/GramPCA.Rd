@@ -18,6 +18,18 @@ GramPCA(xx, npc)
 This function performs PCA using the eigenvectors of the Gram matrix G 
 (G=X*X') when n < p, or standard PCA when n > p.
 }
+\examples{
+  ## standard Normal 10x50 matrix, 3 PC's
+  GramPCA(xx = matrix(rnorm(500),10), npc = 3)
+  
+  ## 100x5 matrix (use standard PCA):
+  GramPCA(xx = matrix(rnorm(500),100), npc = 3)
+  
+  \dontrun{
+  ## large 100x10,000 matrix:
+  GramPCA(xx = matrix(rnorm(1e6),100), npc = 3)
+  }
+}
 \seealso{
 \code{\link[pcaMethods]{pca}}
 

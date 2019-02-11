@@ -8,6 +8,9 @@ Precision2PartialCor <- function(xx){
   #' @param xx The inverse covariance matrix.
   #' 
   #' @return \item{pcor}{ The partial correlation matrix}. 
+  #' @examples 
+  #'   A <- matrix(rnorm(100),10)
+  #'   Precision2PartialCor(xx = A%*%t(A))
   #' @export
   
   x <- as.matrix(xx)

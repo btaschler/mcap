@@ -23,6 +23,9 @@ GMMwrapper <- function(xx, k, criterion = 'mmdl',
   #' 
   #' @return \item{model_fit}{ Model fit (output of \code{\link[nethet]{mixglasso}}).}
   #'         \item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided).}
+  #' @examples
+  #'   ## standard Normal 100x5 matrix, 2 clusters:
+  #'   GMMwrapper(xx = matrix(rnorm(500),100), k = 2) 
   #' @export
   
   ## input checks

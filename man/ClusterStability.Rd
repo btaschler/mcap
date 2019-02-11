@@ -11,7 +11,7 @@ ClusterStability(xx, k, B = 10, frac_subsample = 0.75)
 
 \item{k}{The number of clusters.}
 
-\item{B}{The number of subsamples to be used (default: \code{B=10}). 
+\item{B}{The number of subsampled data sets to be used (default: \code{B=10}). 
 Note that if \code{B} is too small (<10), the variance of the 
 stability estimate increases.}
 
@@ -27,6 +27,15 @@ subsamples of size m < n (where n is the total sample size). Default for
 m=0.75n. Clustering is done using a full covariance Gaussian mixture model.
 Measure of cluster stability is based on the adjusted Rand index
 of shared points given two subsets of the data.
+}
+\examples{
+  ## standard Normal matrix, 2 clusters:
+  ClusterStability(xx = matrix(rnorm(1e3), 100), k = 2)
+  
+  \dontrun{
+  ## large input matrix 
+  ClusterStability(xx = matrix(rnorm(1e3*1e4), 1e3), k = 5, B = 20)
+  }
 }
 \seealso{
 \code{\link{MCAPfit}}, 

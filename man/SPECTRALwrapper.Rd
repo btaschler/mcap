@@ -25,6 +25,9 @@ Spectral clustering using an RBF kernel.
 The wrapper performs multiple restarts in case true labels are provided 
 (in order to optimise cluster assignments w.r.t. the Rand index).
 }
+\examples{
+  SPECTRALwrapper(xx = matrix(rnorm(500),50), k=2)
+}
 \seealso{
 \code{\link{MCAPfit}}, 
          \code{\link{GMMwrapper}}, 

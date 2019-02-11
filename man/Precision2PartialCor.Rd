@@ -16,3 +16,7 @@ Precision2PartialCor(xx)
 This function takes an inverse covariance (or precision) matrix as input 
 and computes the partial correlation matrix.
 }
+\examples{
+  A <- matrix(rnorm(100),10)
+  Precision2PartialCor(xx = A\%*\%t(A))
+}

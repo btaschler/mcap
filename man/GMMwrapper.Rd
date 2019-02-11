@@ -29,6 +29,10 @@ Full covariance Gaussian mixture modelling based on the nethet package.
 The wrapper performs multiple restarts in case true labels are provided 
 (in order to optimise cluster assignments w.r.t. the Rand index).
 }
+\examples{
+  ## standard Normal 100x5 matrix, 2 clusters:
+  GMMwrapper(xx = matrix(rnorm(500),100), k = 2) 
+}
 \seealso{
 \code{\link{MCAPfit}},
          \code{\link{OptDimClusterStability}},

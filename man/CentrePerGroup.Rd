@@ -19,6 +19,16 @@ elements are treated as belonging to one group).}
 Mean centering of an input matrix. When true labels are provided, the 
 groups/clusters are centred individually.
 }
+\examples{
+  ## 10x5 matrix, 1 group:
+  CentrePerGroup(xx=matrix(rnorm(50),10,5))
+  
+  ## 2 groups:
+  CentrePerGroup(xx=matrix(rnorm(50),10,5), true_labels=round(runif(10)))
+  
+  ## 10 groups:
+  CentrePerGroup(xx=matrix(rnorm(5000),100,50), true_labels=round(runif(100)*10))
+}
 \seealso{
 \code{\link{colMeans}}, \code{\link{scale}}
 }

@@ -10,6 +10,9 @@ Rank2Normality <- function (xx){
   #' @param xx The data matrix.
   #' 
   #' @return tt Data matrix transformed to normality.
+  #' @examples 
+  #'   ## 50x10 matrix with categorical (integer) entries:
+  #'   Rank2Normality(xx = matrix(round(runif(500)*20), 50))
   #' @export
   
   # number of samples

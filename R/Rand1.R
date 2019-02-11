@@ -7,6 +7,8 @@ Rand1 <- function(n){
   #' @param n Number of elements
   #' 
   #' @return Sign vector of length \code{n}.
+  #' @examples 
+  #'   Rand1(10)
   #' @export
   
   return((round(stats::runif(n)) * 2) - 1)

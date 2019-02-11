@@ -17,13 +17,21 @@ ClusterStability <- function(xx, k, B = 10, frac_subsample = 0.75){
   #' 
   #' @param xx The data matrix (n x p).
   #' @param k The number of clusters. 
-  #' @param B The number of subsamples to be used (default: \code{B=10}). 
+  #' @param B The number of subsampled data sets to be used (default: \code{B=10}). 
   #'          Note that if \code{B} is too small (<10), the variance of the 
   #'          stability estimate increases.
   #' @param frac_subsample Fraction of total samples to be used in each 
   #'                       subsample (default: 0.75).
   #' 
   #' @return \item{stab}{ Measure of cluster stability.}
+  #' @examples
+  #'   ## standard Normal matrix, 2 clusters:
+  #'   ClusterStability(xx=matrix(rnorm(200),50), k=2)
+  #'   
+  #'   \dontrun{
+  #'   ## large input matrix 
+  #'   ClusterStability(xx=matrix(rnorm(1e3*1e4),1e3), k=5, B=20)
+  #'   }
   #' @export
   
   ## preliminaries

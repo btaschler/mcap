@@ -16,6 +16,10 @@ tt Data matrix transformed to normality.
 This function performs a rank to normality transformation of the columns
 of an input matrix X.
 }
+\examples{
+  ## 50x10 matrix with categorical (integer) entries:
+  Rank2Normality(xx = matrix(round(runif(500)*20), 50))
+}
 \seealso{
 \code{\link[stats]{qnorm}}
 }

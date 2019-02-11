@@ -14,6 +14,15 @@ RandProject <- function(xx, q, method = 'gaussian'){
   #'               matrix. Default: \code{"gaussian"}.
   #' 
   #' @return Projected matrix (n x q).
+  #' @examples 
+  #'   ## Project to 3 dimensions with Gaussian projection matrix
+  #'   RandProject(xx=matrix(rnorm(500),50,10), q=3)
+  #'   
+  #'   ## Achlioptas (sparse)
+  #'   RandProject(xx=matrix(rnorm(500),50,10), q=2, method='achlioptas')
+  #'   
+  #'   ## Li (very sparse)
+  #'   RandProject(xx=matrix(rnorm(5000),50,100), q=10, method='li')
   #' @export
   
   p <- ncol(xx)

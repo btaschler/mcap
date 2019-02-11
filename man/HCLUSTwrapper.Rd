@@ -32,6 +32,9 @@ the Ward criterion.
 The wrapper can perform an optimisation over clustering methods in case 
 true labels are provided (i.e. optimising cluster assignments w.r.t. the Rand index).
 }
+\examples{
+  HCLUSTwrapper(xx = matrix(rnorm(500),50,10), k = 2)
+}
 \seealso{
 \code{\link[stats]{hclust}}, 
          \code{\link[mclust]{adjustedRandIndex}}

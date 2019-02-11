@@ -24,6 +24,8 @@ HCLUSTwrapper <- function(xx, k, method = 'ward.D',
   #' 
   #' @return \item{model_fit}{ Model fit (output of \code{\link[stats]{hclust}}).}
   #'         \item{aRI}{ Adjusted Rand index (when \code{true_labels} is provided).}
+  #' @examples 
+  #'   HCLUSTwrapper(xx = matrix(rnorm(500),50,10), k = 2)
   #' @export
   
   ## input checks

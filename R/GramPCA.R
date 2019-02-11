@@ -13,6 +13,17 @@ GramPCA <- function(xx, npc) {
   #' @param npc The number of principal components to be returned. 
   #' 
   #' @return \item{zz}{Principal components (n x npc).}
+  #' @examples 
+  #'   ## standard Normal 10x50 matrix, 3 PC's
+  #'   GramPCA(xx = matrix(rnorm(500),10), npc = 3)
+  #'   
+  #'   ## 100x5 matrix (use standard PCA):
+  #'   GramPCA(xx = matrix(rnorm(500),100), npc = 3)
+  #'   
+  #'   \dontrun{
+  #'   ## large 100x10,000 matrix:
+  #'   GramPCA(xx = matrix(rnorm(1e6),100), npc = 3)
+  #'   }
   #' @export
   
   

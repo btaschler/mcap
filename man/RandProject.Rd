@@ -22,6 +22,16 @@ Projected matrix (n x q).
 Perform a random projection (Gauss, Achlioptas or Li) of the input matrix X.
 Based on the RandPro package.
 }
+\examples{
+  ## Project to 3 dimensions with Gaussian projection matrix
+  RandProject(xx=matrix(rnorm(500),50,10), q=3)
+  
+  ## Achlioptas (sparse)
+  RandProject(xx=matrix(rnorm(500),50,10), q=2, method='achlioptas')
+  
+  ## Li (very sparse)
+  RandProject(xx=matrix(rnorm(5000),50,100), q=10, method='li')
+}
 \seealso{
 \code{\link[RandPro]{form_matrix}}
 }

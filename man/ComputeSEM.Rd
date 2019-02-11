@@ -15,3 +15,12 @@ Standard error of the mean (SEM) of \code{x}.
 \description{
 Compute standard error of the mean for an input vector
 }
+\examples{
+  ## random vector:
+  ComputeSEM(rnorm(100))
+  
+  ## with missing entries:
+  x <- runif(1000)*5
+  x[sample(1000, 50)] <- NA
+  ComputeSEM(x)
+}

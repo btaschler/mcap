@@ -46,14 +46,21 @@ Projection variants include PCA-based and random projection.
 ...
 }
 \examples{
-  \dontrun{
-  MCAPfit(matrix(rnorm(200),20,10), 2, 'PCA', round(runif(20)), F, F, T)
-  }
+  ## small standard Normal matrix with random labels:
+  MCAPfit(xx=matrix(rnorm(200),20,10), k=2, projection='PCA', 
+          true_labels = round(runif(20)), parallel=TRUE)
   
   \dontrun{
-  MCAPfit(matrix(rnorm(5e4),100,500), 2, 'PCA', round(runif(100)), F, F, T)  #' 
-  }
-
+  ## sparse random projection:
+  MCAPfit(xx=rbind(matrix(rnorm(5e4),100,500), matrix(rnorm(5e4,mean=1),100,500)),
+          k=2, projection='li, 
+          true_labels=c(rep(0,100),rep(1,100)), parallel=TRUE)
+          
+  ## sparse random projection, removing the mean signal:
+  MCAPfit(xx=rbind(matrix(rnorm(5e4),100,500), matrix(rnorm(5e4,mean=1),100,500)),
+          k=2, projection='li, centering_per_group=TRUE,
+          true_labels=c(rep(0,100),rep(1,100)), parallel=TRUE)
+  } 
 }
 \references{
 Taschler, B., Dondelinger, F. and Mukherjee, S. (2019) 

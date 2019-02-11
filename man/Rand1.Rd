@@ -15,3 +15,6 @@ Sign vector of length \code{n}.
 \description{
 Create a random sign vector of length \code{n} (iid ~ +1/-1).
 }
+\examples{
+  Rand1(10)
+}

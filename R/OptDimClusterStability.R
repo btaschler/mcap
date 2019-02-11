@@ -40,6 +40,22 @@ OptDimClusterStability <- function(xx, k, method = 'PCA',
   #'                        provided.}
   #' @importFrom magrittr %>%
   #' @importFrom foreach %dopar%
+  #' @examples 
+  #'   ## Default settings, 50x10 standard Normal input matrix:
+  #'   OptDimClusterStability(xx=matrix(rnorm(500),50), k=2)
+  #'   
+  #'   ## finer search over q:
+  #'   \dontrun{
+  #'   OptDimClusterStability(xx=matrix(rnorm(2e4),100,200), k=2, n_grid=10)
+  #'   }
+  #'   
+  #'   ## set max. q, provide class labels, run in parallel:
+  #'   \dontrun{
+  #'   OptDimClusterStability(xx=rbind(matrix(rnorm(2e4),100,200), 
+  #'                                   matrix(rnorm(2e4, mean = 2),100,200)),
+  #'                          k=2, q_max=15, true_labels = c(rep(0,100), rep(1,100)),
+  #'                          parallel=TRUE)
+  #'  }
   #' @export
   
   ## preliminaries
