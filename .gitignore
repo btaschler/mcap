@@ -2,6 +2,6 @@
 .RData
 .Rhistory
 .Rproj.user
-*/results/*
-*/plots/*
-*/old_results/*
+**/results*/
+**/plots/
+**/old_results/
