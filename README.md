@@ -3,27 +3,27 @@
 ## MCAP
 
 `mcap` provides a model-based clustering approach in very high
-dimensions (especially when \(p \gg n\)) via adaptive projections.
-Clustering is based on full variances Gaussian mixture modelling in a
-lower dimensional (projected) space. The projection dimension is set
-adaptively in a data-driven manner based on a cluster stability
-criterion. Available projection variants (so far) include PCA and random
-Projections (Gaussian as well as sparse methods).
+dimensions (especially when `p` is much larger than `n`) via adaptive
+projections. Clustering is based on full variances Gaussian mixture
+modelling in a lower dimensional (projected) space. The projection
+dimension is set adaptively in a data-driven manner based on a cluster
+stability criterion. Available projection variants (so far) include PCA
+and random Projections (Gaussian as well as sparse methods).
 
 ### Resources
 
-See our paper: …
+See our paper: *currently under review*
 
 ### Getting Started
 
-Clone or download the [code](https://github.com/btaschler/MCAP) from
+Clone or download the [code](https://github.com/btaschler/mcap) from
 github.
 
 Alternatively, you can install `mcap` directly from github with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("btaschler/MCAP")
+devtools::install_github("btaschler/mcap")
 ```
 
 ### Prerequisites
@@ -75,16 +75,16 @@ print(model_fit$fit_q_opt$q_opt)
 
 ### Versioning
 
-We use [Semantic Versioning](http://semver.org/) for versioning. For all
-available versions, see
-[releases](https://github.com/btaschler/MCAP/releases).
+For all available versions, see
+[releases](https://github.com/btaschler/mcap/releases). We use [Semantic
+Versioning](http://semver.org/).
 
 ### Authors
 
   - **[Bernd Taschler](https://github.com/btaschler), Sach Mukherjee**
 
 List of
-[contributors](https://github.com/btaschler/MCAP/graphs/contributors).
+[contributors](https://github.com/btaschler/mcap/graphs/contributors).
 
 ### License
 
