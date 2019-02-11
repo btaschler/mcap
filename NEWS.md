@@ -1,6 +1,7 @@
 
 # mcap (development version)
-- Working toward first release
+- adding more examples
+- working towards CRAN release
 
 
-# mcap 0.?.?
+# mcap 0.1.0 (initial release)
