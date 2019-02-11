@@ -103,7 +103,7 @@ OptDimClusterStability <- function(xx, k, method = 'PCA',
                                                             'aRI' = numeric(),
                                                             'stability' = numeric())) %dopar% 
   { 
-    if(parallel){ RevoUtilsMath::setMKLthreads(1) }  #prevent multi-threading (!)
+    #if(parallel){ RevoUtilsMath::setMKLthreads(1) }  #prevent multi-threading (!)
     
     ## set current target dimension
     curr_q <- max(k, min(p, floor(sqrt(c_arr[i] * n / k))))
