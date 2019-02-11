@@ -13,7 +13,7 @@ License: GPL-3
 biocViews:
 Imports: foreach, doParallel, parallel, iterators, magrittr, 
          pcaMethods, nethet, mclust, huge, RandPro, kernlab, 
-         stats, dplyr, tidyverse, utils, methods, data.table, RevoUtilsMath
+         stats, dplyr, tidyverse, utils, methods, data.table, RevoUtils
 RoxygenNote: 6.1.1
 Suggests: testthat, knitr, rmarkdown
 Encoding: UTF-8
