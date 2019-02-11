@@ -46,12 +46,12 @@ MCAPfit <- function(xx, k, projection = 'PCA',
   #'   \dontrun{
   #'   ## sparse random projection:
   #'   MCAPfit(xx=rbind(matrix(rnorm(5e4),100,500), matrix(rnorm(5e4,mean=1),100,500)),
-  #'           k=2, projection='li, 
+  #'           k=2, projection='li', 
   #'           true_labels=c(rep(0,100),rep(1,100)), parallel=TRUE)
   #'           
   #'   ## sparse random projection, removing the mean signal:
   #'   MCAPfit(xx=rbind(matrix(rnorm(5e4),100,500), matrix(rnorm(5e4,mean=1),100,500)),
-  #'           k=2, projection='li, centering_per_group=TRUE,
+  #'           k=2, projection='li', centering_per_group=TRUE,
   #'           true_labels=c(rep(0,100),rep(1,100)), parallel=TRUE)
   #'   } 
   #' @export
