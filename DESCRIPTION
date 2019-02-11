@@ -12,7 +12,7 @@ Depends: R (>= 3.1.0)
 License: GPL-3
 Imports: foreach, doParallel, parallel, iterators, magrittr, 
          pcaMethods, nethet, mclust, huge, RandPro, kernlab, 
-         stats, dplyr, tidyverse, utils, methods, data.table
+         stats, dplyr, tidyverse, utils, methods, data.table, RevoUtilsMath
 RoxygenNote: 6.1.1
 Suggests: testthat, knitr, rmarkdown
 Encoding: UTF-8
