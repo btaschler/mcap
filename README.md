@@ -96,4 +96,4 @@ This project is licensed under the GNU General Public License – see the
   - [Konstantinos Perrakis](https://github.com/kperrakis) for valuable
     discussions.
 
-  - The coffe machine for mental and physical support.
+  - The coffee machine for mental and physical support.
