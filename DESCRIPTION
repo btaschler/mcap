@@ -10,6 +10,7 @@ Description: Using Gaussian mixture models and linear projections (PCA, random
              projections) for clustering in very high dimensional settings.
 Depends: R (>= 3.1.0)
 License: GPL-3
+biocViews:
 Imports: foreach, doParallel, parallel, iterators, magrittr, 
          pcaMethods, nethet, mclust, huge, RandPro, kernlab, 
          stats, dplyr, tidyverse, utils, methods, data.table, RevoUtilsMath
