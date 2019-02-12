@@ -1,5 +1,8 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![Build
+Status](https://travis-ci.com/btaschler/mcap.svg?branch=master)](https://travis-ci.com/btaschler/mcap)
+
 ## MCAP
 
 `mcap` provides a model-based clustering approach in very high
@@ -13,6 +16,8 @@ and random Projections (Gaussian as well as sparse methods).
 ### Resources
 
 See our paper: *currently under review*
+
+preprint: …
 
 ### Getting Started
 

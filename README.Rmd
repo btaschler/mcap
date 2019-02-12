@@ -14,6 +14,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+
+[![Build Status](https://travis-ci.com/btaschler/mcap.svg?branch=master)](https://travis-ci.com/btaschler/mcap)
+
+
 ## MCAP
 
 `mcap` provides a model-based clustering approach in very high 
@@ -27,6 +31,8 @@ Available projection variants (so far) include PCA and random Projections
 
 ### Resources
 See our paper: *currently under review*
+
+preprint: ...
 
 
 ### Getting Started
